@@ -28,6 +28,7 @@ export default function Home() {
     const [recommendedItems, setRecommendedItems] = useState([]);
     const [modalIsOpen, setIsOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState(undefined);
+    const serverAssets = 'https://geosurvai.com/assets/images/';
 
     const [checked, setChecked] = useState(false);
     const handleChange = () => {
@@ -57,7 +58,7 @@ export default function Home() {
         if(checked) {
 
         }
-        await fetch('/api/recommendations_talent_v2', {
+        await fetch('/api/recommendations_talent_v3', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -73,7 +74,7 @@ export default function Home() {
             })
             .then((recommendations) => {
                 //console.log(recommendations.data);
-                setRecommendedItems(recommendations.data.Get.TalentV2);
+                setRecommendedItems(recommendations.data.Get.TalentV3);
             });
 
         setIsLoading(false);
@@ -247,7 +248,7 @@ export default function Home() {
                         <div>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
-                                src={selectedItem?.image}
+                                src={serverAssets + selectedItem?.image}
                                 alt={"Thumbnail of the talent " + selectedItem?.name}
                                 className="w-64 rounded-lg shadow-lg"
                             />
@@ -346,7 +347,7 @@ export default function Home() {
                                 type="text"
                                 id="favorite-books"
                                 name="favorite-books"
-                                placeholder="I'd like to learn..."
+                                placeholder="Find someone with ..."
                                 className="block w-full px-4 py-2 border border-gray-300 bg-white rounded-md shadow-sm "
                                 value={query}
                                 onChange={(e) => {
@@ -452,7 +453,7 @@ export default function Home() {
                                                                 </div>
                                                                 <div className='w-48'>
                                                                     <img
-                                                                        src={item['image']}
+                                                                        src={serverAssets + item['image']}
                                                                         alt={"Thumbnail of the talent " + item['name']}
                                                                         className="w-full h-full rounded-lg shadow-lg"
                                                                     />

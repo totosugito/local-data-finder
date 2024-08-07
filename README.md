@@ -31,11 +31,12 @@ pip install -r requirements.txt
 ```
 a. book_create_db.py : Code untuk membuat book data finder
 b. talent_create_db.py : Code untuk membuat talent data finder (old version)
-c. talent_create_db_v2.py : Code untuk membuat talent data finder (latest version)
+c. talent_create_db_v2.py : Code untuk membuat talent data finder
+d. talent_create_db_v3.py : Code untuk membuat talent data finder (latest version)
 ```
-7. Jalankan script untuk membuat lokal db. Misal: *talent_create_db_v2.py*. Sesuaikan parameter *ollama_api* jika ditemukan error saat di run.
+7. Jalankan script untuk membuat lokal db. Misal: *talent_create_db_v3.py*. Sesuaikan parameter *ollama_api* jika ditemukan error saat di run.
 ```
-python talent_create_db_v2.py
+python talent_create_db_v3.py
 ```
 8. Masuk ke folder root (local-data-finder). Install node environment
 ```
@@ -61,8 +62,13 @@ api : api/recommendatios_book.ts
 frontend : index-talent.tsx
 api : api/recommendatios_talent.ts
 ```
-3. database talent_v2 (Latest)
+3. database talent_v2
 ```
 frontend : index.tsx
 api : api/recommendatios_talent_v2.ts
+```
+4. database talent_v3 (Latest)
+```
+frontend : index.tsx
+api : api/recommendatios_talent_v3.ts
 ```

@@ -346,7 +346,7 @@ export default function Home() {
                                 type="text"
                                 id="favorite-books"
                                 name="favorite-books"
-                                placeholder="I'd like to learn..."
+                                placeholder="Find someone with ..."
                                 className="block w-full px-4 py-2 border border-gray-300 bg-white rounded-md shadow-sm "
                                 value={query}
                                 onChange={(e) => {

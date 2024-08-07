@@ -82,16 +82,16 @@ for item in data_['data']:
 # ======================================
 # ask the question
 # ======================================
-# user_input = input("What query do you have for people recommendations? ")
-# response = collection_.query.near_text(
-#     query=user_input,
-#     limit=3
-# )
-#
-# print(f"Here are the recommended for you based on your interest in {user_input}:")
-# for item in response.objects:
-#     print(item)
-#     print(f"Fullname: {item.properties['fullName']}")
-#     print(item)
-#     print('---\n\n\n')
+#user_input = input("What query do you have for people recommendations? ")
+#response = collection_.query.near_text(
+#    query=user_input,
+#    limit=3
+#)
+
+#print(f"Here are the recommended for you based on your interest in {user_input}:")
+#for item in response.objects:
+#    print(item)
+#    print(f"Name: {item.properties['name']}")
+#    print(item)
+#    print('---\n\n\n')
 client.close()
